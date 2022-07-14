@@ -1,0 +1,29 @@
+table {
+	background-color: white;
+	border-collapse: collapse;
+	box-shadow: 0 13px 27px -5px hsl(240deg 30% 28% / 25%),
+		0 8px 16px -8px hsl(0deg 0% 0% / 30%),
+		0 -6px 16px -6px hsl(0deg 0% 0% / 3%);
+}
+
+thead {
+	background-color: whitesmoke;
+    /* background-color: lightseagreen; */
+}
+
+#table-caption {
+	font-size: x-large;
+	margin-bottom: 5px;
+}
+
+th,
+td {
+	font-size: larger;
+	text-align: center;
+	padding: 10px 0;
+	/* border: 1px solid black; */
+}
+
+tr {
+	border: 1px solid black;
+}

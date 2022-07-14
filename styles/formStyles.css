@@ -1,0 +1,110 @@
+fieldset {
+	padding: 5px 20px;
+	background-color: whitesmoke;
+	box-shadow: 0 13px 27px -5px hsl(240deg 30% 28% / 25%),
+		0 8px 16px -8px hsl(0deg 0% 0% / 30%),
+		0 -6px 16px -6px hsl(0deg 0% 0% / 3%);
+}
+
+legend {
+	font-size: x-large;
+}
+
+fieldset div {
+	display: flex;
+	flex-direction: column;
+
+	padding: 10px 0;
+	/* border: 1px solid black; */
+}
+
+label {
+	font-size: x-large;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+input, select {
+	cursor: pointer;
+	padding: 10px;
+	font-size: large;
+}
+
+
+#group-radio-btns {
+	padding-bottom: 0;
+}
+
+#group-radio-btns label:last-child {
+	margin-bottom: 0;
+}
+
+/* 
+#group-radio-btns {
+	flex-direction: row;
+	justify-content: space-around;
+
+    padding-top: 10px;
+	padding-bottom: 0;
+} 
+*/
+
+#group-radio-btns label {
+	font-size: larger;
+}
+
+input[type="checkbox"] {
+	width: 15px;
+	height: 15px;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: blue;
+}
+
+
+/* Form Buttons */
+#btns {
+	display: flex;
+	flex-direction: row;
+}
+
+#btns input {
+	flex: 1;
+	margin: 0 10px 0 10px;
+
+	color: white;
+	font-size: large;
+
+	border: none;
+	border-radius: 5px;
+}
+
+#btns input[type="submit"] {
+	background-color: lightseagreen;
+}
+
+#btns input[type="reset"] {
+	background-color: tomato;
+}
+
+
+/* Error Visual Handling */
+.error {
+	border: 2px solid red;
+}
+
+.good {
+	border: 1px solid black;
+}
+
+#terms-error {
+	font-size: medium;
+	color: red;
+    text-align: center;
+}

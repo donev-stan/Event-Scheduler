@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Stanislav Donev">
+
+    <link rel="icon" type="image/x-icon" href="./calendar.png">
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <script src="./script.js" defer></script>
+
+    <title>Event Scheduler</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- Table Container -->
+        <div id="table-container">
+
+            <!-- Table -->
+            <table>
+                <caption id="table-caption">Novarto Front-end Academy</caption>
+
+                <!-- Table Head -->
+                <thead>
+                    <tr>
+                        <th rowspan="3">Day</th>
+                        <th colspan="3">Schedule</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Time</th>
+                        <th rowspan="2">Topic</th>
+                    </tr>
+                    <tr>
+                        <th>Start</th>
+                        <th>End</th>
+                    </tr>
+                </thead>
+
+                <!-- Table Body -->
+                <tbody>
+
+                    <!-- Row: Monday-->
+                    <tr>
+                        <td rowspan="2">Monday <br> <b> 04.07.2022 </b> </td>
+                        <td rowspan="2">11:00</td>
+                        <td rowspan="2">13:00</td>
+                        <td>How the net works?</td>
+                    </tr>
+
+                    <tr>
+                        <td>Intro to HTML</td>
+                    </tr>
+
+                    <!-- Row: Wednesday -->
+                    <tr>
+                        <td rowspan="3">Wednesday <br> <b> 06.07.2022 </b> </td>
+                        <td>09:30</td>
+                        <td>10:00</td>
+
+                        <td>HTML Revision</td>
+                    </tr>
+
+                    <tr>
+                        <td>10:00</td>
+                        <td>10:30</td>
+
+                        <td rowspan="2">HTML Lists</td>
+                    </tr>
+
+                    <tr>
+                        <td>10:45</td>
+                        <td>11:30</td>
+                    </tr>
+
+                    <!-- Row: Friday -->
+                    <tr>
+                        <td rowspan="3">Friday <br> <b> 08.07.2022 </b> </td>
+                        <td>09:30</td>
+                        <td>10:30</td>
+
+                        <td>HTML Tables</td>
+                    </tr>
+
+                    <tr>
+                        <td>10:30</td>
+                        <td>11:00</td>
+
+                        <td>Break</td>
+                    </tr>
+
+                    <tr>
+                        <td>11:00</td>
+                        <td>12:00</td>
+
+                        <td>HTML Forms</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Display Form Information -->
+            <div id="notes">
+                <dl>
+                    <dt>🗒 Notes:</dt>
+                    <dd> Responsiveness thanks to <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+                            target="_blank"> flexbox </a> and media queries.</dd>
+                    <dd> Basic error validation and visual feedback.</dd>
+                    <dd> Basic interactivity done with javascript.</dd>
+                    <dd> Free hosting on <a href="https://app.netlify.com/" target="_blank"> Netlify</a>.</dd>
+                </dl>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div id="form-container">
+            <form action="">
+                <fieldset>
+                    <legend> Add New Event </legend>
+
+                    <!-- Day -->
+                    <div id="day">
+                        <label for="day">Day: </label>
+                        <select name="day" id="day" onchange="onInputChange(event)" required>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                        </select>
+                        <!-- <input type="text" id="day" name="day" onchange="onInputChange(event)" required> -->
+                    </div>
+
+                    <!-- Date -->
+                    <div id="date-input-container">
+                        <label for="date">Date: </label>
+                        <input type="date" id="date" name="date" onchange="onInputChange(event)" required>
+                    </div>
+
+                    <!-- Start Time -->
+                    <div id="start-time-input-container">
+                        <label for="time-start">Start: </label>
+                        <input type="time" id="time-start" name="timeStart" onchange="onInputChange(event)" required>
+                    </div>
+
+                    <!-- End Time -->
+                    <div id="end-time-input-container">
+                        <label for="time-end">End: </label>
+                        <input type="time" id="time-end" name="timeEnd" onchange="onInputChange(event)" required>
+                    </div>
+
+                    <!-- Topic -->
+                    <div id="topic-input-container">
+                        <label for="topic">Topic: </label>
+                        <input type="text" id="topic" name="topic" onchange="onInputChange(event)" required>
+                    </div>
+
+                    <!-- Draft -->
+                    <div id="draft-radio-container">
+                        <label for="">Save as Draft?</label>
+
+                        <div id="group-radio-btns">
+                            <label for="draft-yes">
+                                <input type="radio" id="draft-yes" name="draft" value="yes" required> Yes
+                            </label>
+                            <label for="draft-no">
+                                <input type="radio" id="draft-no" name="draft" value="no" checked required> No
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- <div id="terms"> -->
+                    <label for="terms">
+                        <input type="checkbox" id="terms" name="terms" onchange="onInputChange(event)" required>
+                        <small> I accept the <a href="#"> terms and conditions</a>! </small>
+
+                        <br>
+
+                        <small id="terms-error" hidden>Terms and Conditions are mandatory!</small>
+                    </label>
+                    <!-- </div> -->
+
+                    <div id="btns">
+                        <input type="submit" value="Save" onclick="onFormSubmit(event, this.form)">
+                        <input type="reset" value="Clear Data">
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
